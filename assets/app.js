@@ -7,4 +7,11 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+import 'bootstrap';
+
+import '@popperjs/core';
+
+import '@fortawesome/fontawesome-free/css/all.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+//console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');

@@ -1,17 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}            
+        Stockflow
         {% endblock %}
+    </title>
+    {% block stylesheets %}    
+    {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% block javascripts %}
+        {% block importmap %}{{ importmap() }}{% endblock %}
+    {% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ url('app_index')}}"><img class="img-fluid" src="{{ asset("images/base/logo_header.png") }}" alt="Logo"></a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <ul>
+                    <li class="dropdown">
+                        PRODUCTO <span>^</span>
+                        <ul>
+                            <li><a href="{{ url('app_descarrega') }}">DESCARGA DE PRODUCTO</a></li>
+                            <li><a href="{{ url('app_plans_preus') }}">PLANES Y PRECIOS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url('app_casos_exit') }}">CASOS DE ÉXITO</a></li>
+                    <li><a href="{{ url('app_resenyes') }}">RESEÑAS</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{{ url('app_qui_som') }}">QUIÉNES SOMOS</a></li>
+                    <li><a href="{{ url('app_blog_index') }}">BLOG</a></li>
+                    <li><a href="{{ url('app_contacte') }}">CONTACTO</a></li>
+                </ul>
+                <a href="{{ url('app_descripcio_producte') }}"><button>DEMO</button></a>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        {% block main %}
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    </main>
+
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <a href="https://www.google.es/maps/place/Carrer+Duanes,+17,+03780+Pego,+Alacant/">
+                        <i class="fa-location-dot"></i>
+                    </a>
+                    <p>C/Duanes, 17 - Pego</p>
+                    <a href="../contactar/contactar.html"><i class="fa-solid fa-phone"></i></a>
+                    <p>+34 966 409 960</p>
+                    <a href="../contactar/contactar.html"><i class="fa-solid fa-envelope"></i></a>
+                    <p>03007613@edu.gva.es</p>
+                </div>
+                <div class="col-3">
+                    <p>Legal</p>
+                    <ul>
+                        <li><a href="../faqs/faqs.html">FAQs</a></li>
+                        <li><a href="../avisoLegal/avisoLegal.html">Aviso legal</a></li>
+                        <li><a href="../politicaCookies/politicaCookies.html">Política de cookies</a></li>
+                        <li><a href="../politicaPrivacidad/politicaPrivacidad.html">Política de privacidad</a></li>
+                    </ul>
+                    <a href="https://x.com/"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="col-5">
+                    <p>NEWSLETTERS</p>
+                    <form>
+                        <p>* Nombre</p>
+                        <input type="text" placeholder="Indica tu nombre">
+                        <p>* Email</p>
+                        <input type="text" placeholder="Indica tu email">
+                        <input type="checkbox">
+                        <label>Acepto <a href="../terminos_condiciones/terminos_condiciones.html">términos</a> y 
+                            <a href="../terminos_condiciones/terminos_condiciones.html">condiciones</a>
+                        </label>
+                        <button>Suscríbete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6">
+                <p>© Copyright 2024. Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
