@@ -1,13 +1,13 @@
-<article class="post">
+<article>
     <h2>
         <a href="{{ path('blog_post', {slug: post.slug}) }}">
             {{ post.title }}
         </a>
     </h2>
 
-    <p class="post-metadata">
-        <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
+    <p>
+        <span><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <span><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
     </p>
 
     <p>{{ post.summary }}</p>

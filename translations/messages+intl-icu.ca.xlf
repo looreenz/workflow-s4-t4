@@ -198,7 +198,6 @@
                 <source>menu.logout</source>
                 <target>Desconnectar-se</target>
             </trans-unit>
-
             <trans-unit id="post.to_publish_a_comment">
                 <source>post.to_publish_a_comment</source>
                 <target>per a publicar un comentari</target>
@@ -259,6 +258,19 @@
             <trans-unit id="help.more_information">
                 <source>help.more_information</source>
                 <target><![CDATA[Per a més informació, consulta la <a href="https://symfony.com/doc">documentació de Symfony</a>.]]></target>
+            </trans-unit>
+
+            <trans-unit id="paginator.previous">
+                <source>paginator.previous</source>
+                <target>Anterior</target>
+            </trans-unit>
+            <trans-unit id="paginator.next">
+                <source>paginator.next</source>
+                <target>Següent</target>
+            </trans-unit>
+            <trans-unit id="paginator.current">
+                <source>paginator.current</source>
+                <target>(actual)</target>
             </trans-unit>
         </body>
     </file>
